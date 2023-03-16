@@ -1,13 +1,12 @@
-import express from 'express';
-import cors from 'cors';
+const express = require('express');
+const cors = require('cors');
 
-const app = express();
-app.use(cors);
+const app = express(cors());
 
 const port = 3001;
 
-app.get('/', (req, res) => {
-	console.log(req);
+app.get('/sayhi', (req, res) => {
+	console.log(`${req.method} ${req.url}`);
 	res.send(`Hey There!`);
 })
 

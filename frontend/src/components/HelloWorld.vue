@@ -2,13 +2,13 @@
 import { ref } from 'vue'
 import axios from 'axios'
 
-let msg = ref('Test Message');
+let msg = ref('');
 
 async function sayHi() {
   try{
-    let response: string = await axios.get('http://localhost:3001/sayhello');
-    console.log('Response: ', response)
-    msg.value = response;
+    let response = await axios.get('api/sayhi');
+    msg.value = response.data;
+    setTimeout(() => msg.value = '', 2000)
   }catch (e){
     console.log(e);
     msg.value = 'error fetching message';
@@ -18,10 +18,10 @@ async function sayHi() {
 
 <template>
   <div class="container">
-  <button @click="sayHi">Say Hi</button>
-  <div class="message-window">
-  {{ msg }}
-  </div>
+    <button @click="sayHi">Say Hi</button>
+    <div class="message-window">
+      {{ msg }}
+    </div>
   </div>
 </template>
 
@@ -43,6 +43,7 @@ button {
 }
 .message-window{
   width: 300px;
+  min-height: 64px;
   margin: 2rem auto;
   padding: 1rem 2rem;
   border: 2px solid gray;
