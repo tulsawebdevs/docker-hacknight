@@ -1,0 +1,53 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+import axios from 'axios'
+
+let msg = ref('Test Message');
+
+async function sayHi() {
+  try{
+    let response: string = await axios.get('http://localhost:3001/sayhello');
+    console.log('Response: ', response)
+    msg.value = response;
+  }catch (e){
+    console.log(e);
+    msg.value = 'error fetching message';
+  }
+}
+</script>
+
+<template>
+  <div class="container">
+  <button @click="sayHi">Say Hi</button>
+  <div class="message-window">
+  {{ msg }}
+  </div>
+  </div>
+</template>
+
+<style scoped>
+.container{
+  padding:1rem;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh; 
+}
+
+button {
+  padding: 1rem 2rem;
+  margin: 0 auto;
+  width: 300px;
+}
+.message-window{
+  width: 300px;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  border: 2px solid gray;
+  box-shadow: 0 0 2px 4px lightgray inset;
+  border-radius:.5rem;
+  text-align: center;
+}
+</style>
