@@ -18,6 +18,9 @@ async function sayHi() {
 
 <template>
   <div class="container">
+    <nav>
+      <router-link to="/requests">Request Log</router-link>
+    </nav>
     <button @click="sayHi">Say Hi</button>
     <div class="message-window">
       {{ msg }}
@@ -50,5 +53,9 @@ button {
   box-shadow: 0 0 2px 4px lightgray inset;
   border-radius:.5rem;
   text-align: center;
+}
+
+nav {
+  margin-bottom: 2rem;
 }
 </style>

@@ -1,0 +1,2 @@
+export declare const safeStringify: (subject: unknown, replacer?: (string | number)[] | ((key: string, value: unknown) => unknown) | null | undefined, space?: number | string) => string;
+//# sourceMappingURL=safeStringify.d.ts.map

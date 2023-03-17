@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "nodemon src/server.js"
   },
@@ -11,7 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "slonik": "^33.1.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.21"
