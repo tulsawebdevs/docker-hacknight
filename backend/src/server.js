@@ -6,7 +6,7 @@ const app = express();
 const port = 3001;
 
 // INIT DATABASE
-const dbPool = await createPool('postgresql://postgres:password@localhost:5432/postgres');
+const dbPool = await createPool('postgresql://postgres:password@database:5432/postgres');
 
 dbPool.connect(async (connection) => {
 	try {
