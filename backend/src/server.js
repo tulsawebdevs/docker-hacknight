@@ -10,8 +10,7 @@ const dbPool = await createPool('postgresql://postgres:password@localhost:5432/p
 
 dbPool.connect(async (connection) => {
 	try {
-		const dropped = await connection.query(sql.unsafe`DROP TABLE IF EXISTS requests`);
-		const result = await connection.query(sql.unsafe`CREATE TABLE requests (id SERIAL PRIMARY KEY, method TEXT, path TEXT, timestamp TIMESTAMP, uastring TEXT)`);
+		const result = await connection.query(sql.unsafe`CREATE TABLE IF NOT EXISTS requests (id SERIAL PRIMARY KEY, method TEXT, path TEXT, timestamp TIMESTAMP, uastring TEXT)`);
 	} catch (e) {
 		console.log(`Error initializing db: ${e}`)
 	}

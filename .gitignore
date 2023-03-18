@@ -27,4 +27,4 @@ coverage
 *.sln
 *.sw?
 
-/data
+/pg_data

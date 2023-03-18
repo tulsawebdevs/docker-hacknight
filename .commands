@@ -6,3 +6,6 @@ docker run -it -p 3001:3001 -v "$(pwd):./app" backend-test
 
 #spin up postgres standalone:
 docker run -it -p 5432:5432 -e POSTGRES_PASSWORD=password postgres
+
+#add persistence on restart
+docker run -it -p 5432:5432 -e POSTGRES_PASSWORD=password -v pg_data:/var/lib/postgresql/data postgres
