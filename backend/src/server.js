@@ -29,10 +29,12 @@ app.get('/sayhi', (req, res) => {
 	console.log(`${req.method} ${req.url}`);
 
 	// persist request 
-	dbPool.query(
-		sql.type('int')`INSERT INTO requests(method, path, timestamp) 
+	if (dbPool) {
+		dbPool.query(
+			sql.type('int')`INSERT INTO requests(method, path, timestamp) 
 		VALUES(${req.method}, ${req.url}, ${new Date().toISOString()})`
-	);
+		);
+	}
 
 	// response
 	res.send(`Hey There!`);
