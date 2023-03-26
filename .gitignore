@@ -27,8 +27,4 @@ coverage
 *.sln
 *.sw?
 
-<<<<<<< HEAD
-/pg_data
-=======
 pg_data
->>>>>>> ec30d09... update backend types and gitignore
