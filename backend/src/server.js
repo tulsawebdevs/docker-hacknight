@@ -6,12 +6,11 @@ const app = express();
 const port = 3001;
 
 // INIT DATABASE
-const dbPool = await createPool('postgresql://postgres:password@localhost:5432/postgres');
+const dbPool = await createPool('postgresql://postgres:password@database:5432/postgres');
 
 dbPool.connect(async (connection) => {
 	try {
-		const dropped = await connection.query(sql.unsafe`DROP TABLE IF EXISTS requests`);
-		const result = await connection.query(sql.unsafe`CREATE TABLE requests (id SERIAL PRIMARY KEY, method TEXT, path TEXT, timestamp TIMESTAMP, uastring TEXT)`);
+		const result = await connection.query(sql.type('void')`CREATE TABLE IF NOT EXISTS requests (id SERIAL PRIMARY KEY, method TEXT, path TEXT, timestamp TIMESTAMP, uastring TEXT)`);
 	} catch (e) {
 		console.log(`Error initializing db: ${e}`)
 	}
