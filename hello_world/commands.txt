@@ -1,0 +1,5 @@
+# Build a Docker image called `hello-world-lab` using the Dockerfile in the current dir
+docker build . -t hello-world-lab
+
+# Run a container from the local image `hello-world-lab`
+docker run hello-world-lab
