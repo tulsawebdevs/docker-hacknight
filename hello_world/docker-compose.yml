@@ -1,6 +1,10 @@
 services: 
   app: 
     build: ./
+    environment:
+      DB_HOST: database
+    depends_on:
+      - database
 
   database:
     image: postgres:16  
