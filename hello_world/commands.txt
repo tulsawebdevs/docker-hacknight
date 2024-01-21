@@ -3,3 +3,6 @@ docker build . -t hello-world-lab
 
 # Run a container from the local image `hello-world-lab`
 docker run hello-world-lab
+
+# Connect to PG container via psql
+psql postgres://postgres:password@localhost:5432/postgres

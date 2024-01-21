@@ -5,6 +5,7 @@
 - Text Editor/IDE
 - Ability to run code in some lanugague (e.g. a JS runtime like node, or a compiler for Go, Rust, etc.)
 - Terminal (Examples will be ZSH but should be translatable to shell of your choice)
+- Database client / CLI tool for db of your choice - we'll use Postgres / psql for our example
 
 ## Overview:
 1. Write a hello world program.
