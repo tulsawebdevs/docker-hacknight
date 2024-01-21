@@ -1,5 +1,7 @@
+import chalk from 'chalk'
+
 function main() {
-	console.log("Hello World!");
+	console.log(chalk.blue("Hello World In blue!"));
 }
 
 main();
