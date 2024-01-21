@@ -1,4 +1,5 @@
 import chalk from 'chalk'
+import { setMaxIdleHTTPParsers } from 'http';
 import pg from 'pg';
 
 async function main() {
@@ -7,10 +8,11 @@ async function main() {
 	});
 	await client.connect();	
 
-	const res = await client.query(`SELECT message from messages ORDER BY random() LIMIT 1`)
-	const msg = res.rows[0].message
-	console.log(chalk.blue(msg));
-	process.exit();
+	setInterval(async () => {
+		const res = await client.query(`SELECT message from messages ORDER BY random() LIMIT 1`)
+		const msg = res.rows[0].message
+		console.log(chalk.blue(msg));
+	}, 2000)
 }
 
 await main();
