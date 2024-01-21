@@ -14,3 +14,4 @@
 4. Add dependency(ies) - we'll use chalk as an example. 
 5. Add a database service in another container with messages
 6. Connect app container to db container to fetch messages
+7. Add volume bind to app to pick up on source changes

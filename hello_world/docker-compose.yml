@@ -5,6 +5,8 @@ services:
       DB_HOST: database
     depends_on:
       - database
+    volumes:
+      - .:/app
 
   database:
     image: postgres:16  
