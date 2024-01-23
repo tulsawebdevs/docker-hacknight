@@ -17,5 +17,10 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=my-secret-pw
       - MYSQL_DATABASE=phonebook
+    volumes:
+      - phonebook_data:/var/lib/mysql
   cache:
     image: redis:latest
+
+volumes:
+  phonebook_data:
