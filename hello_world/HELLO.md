@@ -7,6 +7,15 @@
 - Terminal (Examples will be ZSH but should be translatable to shell of your choice)
 - Database client / CLI tool for db of your choice - we'll use Postgres / psql for our example
 
+## Core Concepts:
+- Dockerfiles
+- Images
+- Containers
+- Port Binds
+- Volume Binds
+- Docker Network
+- Docker Compose
+
 ## Overview:
 1. Write a hello world program.
 2. Build a Docker image of it.
